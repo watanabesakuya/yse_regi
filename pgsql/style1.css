@@ -1,0 +1,175 @@
+/*計上履歴/売上履歴css*/
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #f0f4f8, #ffffff);
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 360px;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+input[type="date"], input[type="number"], button {
+  padding: 12px 16px;
+  margin: 10px 0;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="date"], input[type="number"] {
+  background-color: #f5f7f9;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+a.back-button {
+  display: inline-block;
+  text-align: center;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #555;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+a.back-button:hover {
+  background-color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+table thead {
+  background-color: #3498db;
+  color: white;
+}
+
+table th, table td {
+  padding: 14px 12px;
+  text-align: center;
+}
+
+table tbody tr {
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #eef6fb;
+}
+
+table tbody tr:hover {
+  background-color: #d6ebf9;
+}
+/* ─── 検索フォーム全体 ─── */
+.filter-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* ラベル＋入力をまとめるグループ */
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 150px; /* 横幅の比率と最小幅 */
+}
+
+/* 入力欄 */
+.filter-group label {
+  font-size: 14px;
+  color: #2c3e50;
+  margin-bottom: 4px;
+}
+.filter-group input {
+  padding: 10px 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f5f7f9;
+  width: 100%;
+  box-sizing: border-box;
+}
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+/* 検索ボタン */
+.filter-buttons button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3498db;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color .3s ease;
+}
+
+.filter-buttons button:hover {
+  background-color: #2980b9;
+}
+
+/* リセットリンクをボタン風に */
+.filter-buttons .reset-button {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #555;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color .3s ease;
+}
+
+.filter-buttons .reset-button:hover {
+  background-color: #ccc;
+}
+
+
