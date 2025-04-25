@@ -52,7 +52,7 @@ $filteredData = array_filter($dummyData, function ($item) use ($filterDate, $fil
     <table>
       <thead>
         <tr>
-          <th>ID</th>
+     
           <th>金額</th>
           <th>計上日時</th>
         </tr>
@@ -61,7 +61,7 @@ $filteredData = array_filter($dummyData, function ($item) use ($filterDate, $fil
         <?php if (count($filteredData) > 0): ?>
           <?php foreach ($filteredData as $index => $item): ?>
             <tr>
-              <td><?= $index + 1 ?></td>
+             
               <td><?= number_format($item['amount']) ?> 円</td>
               <td><?= $item['created_at'] ?></td>
             </tr>
