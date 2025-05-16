@@ -1,189 +1,210 @@
-/*計上履歴/売上履歴css*/
+/* style1.css - モダンでスタイリッシュなデザイン */
+
+/* ベース設定 */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #f0f4f8, #ffffff);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
   margin: 0;
   padding: 40px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  min-height: 100vh;
+  color: #34495e;
 }
 
 .container {
-  background: #fff;
-  padding: 30px;
+  background: #ffffffcc; /* 少し透け感のある白 */
+  padding: 40px 50px;
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  max-width: 1000px;   /* ✅ 横長に拡張（もともと360pxや700pxだった場合） */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  max-width: 960px;
   width: 100%;
-  margin: 0 auto;
-  animation: fadeIn 0.5s ease;
   box-sizing: border-box;
+  animation: fadeInUp 0.6s ease forwards;
 }
 
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 h2 {
   text-align: center;
   color: #2c3e50;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: 2rem;
+  text-transform: uppercase;
+  user-select: none;
 }
 
-input[type="date"], input[type="number"], button {
-  padding: 12px 16px;
-  margin: 10px 0;
-  font-size: 16px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
+/* テーブルデザイン */
+table {
   width: 100%;
-  box-sizing: border-box;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  font-size: 1.1rem;
 }
 
-input[type="date"], input[type="number"] {
-  background-color: #f5f7f9;
+thead tr {
+  background-color: #00bcd4;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  user-select: none;
 }
 
-button {
-  background-color: #3498db;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+thead th {
+  padding: 16px 12px;
+  border-radius: 12px 12px 0 0;
 }
 
-button:hover {
-  background-color: #2980b9;
+tbody tr {
+  background: #f9fbfc;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
 }
 
+tbody tr:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+}
+
+tbody td {
+  padding: 16px 12px;
+  text-align: center;
+  vertical-align: middle;
+  color: #34495e;
+  font-weight: 500;
+  user-select: text;
+}
+
+/* 偶数行だけ薄い青グラデーションにしたい場合はコメントを外してください */
+/*
+tbody tr:nth-child(even) {
+  background: linear-gradient(90deg, #e0f7fa, #ffffff);
+}
+*/
+
+/* 戻るボタン */
 a.back-button {
   display: inline-block;
-  text-align: center;
-  margin-top: 20px;
-  padding: 12px 24px;
-  background-color: #555;
+  margin-top: 28px;
+  padding: 14px 36px;
+  background: #00bcd4;
   color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 14px;
   text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  box-shadow: 0 8px 15px rgb(0 188 212 / 0.4);
 }
 
 a.back-button:hover {
-  background-color: #333;
+  background: #0097a7;
+  box-shadow: 0 12px 24px rgb(0 151 167 / 0.6);
+  cursor: pointer;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  border-radius: 8px;
-  overflow: hidden;
-  margin-top: 20px;
+/* 入力フォーム・検索フォームがある場合は統一感を出すための基本設定 */
+input[type="date"], input[type="number"], button {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #00bcd4;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
 }
 
-table thead {
-  background-color: #3498db;
-  color: white;
+input[type="date"]:focus,
+input[type="number"]:focus,
+button:hover {
+  border-color: #0097a7;
+  box-shadow: 0 0 8px #00bcd4aa;
+  cursor: pointer;
+  background-color: #e0f7fa;
 }
 
-table th, table td {
-  padding: 14px 12px;
-  text-align: center;
-}
-
-table tbody tr {
-  background-color: #f9f9f9;
-  transition: background-color 0.3s ease;
-}
-
-table tbody tr:nth-child(even) {
-  background-color: #eef6fb;
-}
-
-table tbody tr:hover {
-  background-color: #d6ebf9;
-}
-/* ─── 検索フォーム全体 ─── */
+/* フォーム全体をフレックスで整列 */
 .filter-form {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 20px;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 24px;
 }
 
-/* ラベル＋入力をまとめるグループ */
 .filter-group {
+  flex: 1 1 200px;
   display: flex;
   flex-direction: column;
-  flex: 1 1 150px; /* 横幅の比率と最小幅 */
 }
 
-/* 入力欄 */
 .filter-group label {
-  font-size: 14px;
-  color: #2c3e50;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #34495e;
+  user-select: none;
 }
-.filter-group input {
-  padding: 10px 12px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  background-color: #f5f7f9;
-  width: 100%;
-  box-sizing: border-box;
-}
+
+/* フィルターのボタン */
 .filter-buttons {
   display: flex;
-  flex-wrap: nowrap;
-  gap: 10px;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-
-/* 検索ボタン */
-.filter-buttons button,
-.filter-buttons .reset-button {
-  width: 310px;               /* ✅ 幅を大きく均等に設定 */
-  padding: 12px 0;
-  font-size: 16px;
-  line-height: 1.2;
-  border-radius: 8px;
-  white-space: nowrap;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.filter-buttons button:hover {
-  background-color: #2980b9;
-}
-
-/* リセットリンクをボタン風に */
-.filter-buttons .reset-button {
-  background-color: #e0e0e0;
-  color: #555;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
   justify-content: center;
-  transition: background-color 0.3s ease;
+  width: 100%;
 }
 
-.filter-buttons .reset-button:hover {
-  background-color: #ccc;
-}
 .filter-buttons button,
 .filter-buttons .reset-button {
-  padding: 12px 20px;
-  font-size: 16px;
-  height: 48px;
-  border-radius: 8px;
-  box-sizing: border-box;
+  background-color: #00bcd4;
+  color: #fff;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 14px;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+  flex: 1 1 180px;
+  min-width: 150px;
+  box-shadow: 0 8px 15px rgba(0,188,212,0.4);
+  user-select: none;
 }
 
+.filter-buttons button:hover,
+.filter-buttons .reset-button:hover {
+  background-color: #0097a7;
+  box-shadow: 0 12px 24px rgba(0,151,167,0.6);
+  cursor: pointer;
+}
 
+/* レスポンシブ対応 */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+  table {
+    font-size: 0.9rem;
+  }
+  .filter-group {
+    flex: 1 1 100%;
+  }
+  .filter-buttons button,
+  .filter-buttons .reset-button {
+    flex: 1 1 100%;
+  }
+}

@@ -1,5 +1,5 @@
 <?php
-// DB接続
+// DB接続設定
 $host = 'localhost';
 $dbname = 'register_db';
 $user = 'root';
@@ -9,8 +9,8 @@ try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // ✅ sales_at に修正
-    $stmt = $pdo->query("SELECT * FROM sales ORDER BY sales_at DESC");
+    // ✅ データ取得クエリ
+$stmt = $pdo->query("SELECT * FROM sales ORDER BY id ASC");
     $sales = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     echo "DBエラー: " . $e->getMessage();
@@ -23,7 +23,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <title>売上履歴</title>
-    <link rel="stylesheet" href="style1.css"> <!-- ✅ style.css → style1.css に変更 -->
+    <link rel="stylesheet" href="style1.css">
 </head>
 
 <body>
@@ -34,21 +34,26 @@ try {
                 <tr>
                     <th>ID</th>
                     <th>金額</th>
-                    <th>日時</th>
+                    <th>売上日時</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($sales as $row): ?>
+                <?php if (!empty($sales)): ?>
+                    <?php foreach ($sales as $row): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($row['id']) ?></td>
+                            <td><?= number_format($row['amount']) ?> 円</td>
+                            <td><?= htmlspecialchars($row['sales_at']) ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
                     <tr>
-                        <td><?= htmlspecialchars($row['id']) ?></td>
-                        <td><?= number_format($row['amount']) ?> 円</td>
-                        <!-- ✅ カラム名を sales_at に修正 -->
-                        <td><?= htmlspecialchars($row['sales_at']) ?></td>
+                        <td colspan="3">売上データがありません。</td>
                     </tr>
-                <?php endforeach; ?>
+                <?php endif; ?>
             </tbody>
         </table>
-        <a class="back-button" href="index.php">← 戻る</a>
+        <a href="index.php" class="back-button">← 戻る</a>
     </div>
 </body>
 
