@@ -23,7 +23,7 @@ $stmt = $pdo->query("SELECT * FROM sales ORDER BY id ASC");
 <head>
     <meta charset="UTF-8">
     <title>売上履歴</title>
-    <link rel="stylesheet" href="style_sales.css">
+    <link rel="stylesheet" href="style1.css">
 </head>
 
 <body>
