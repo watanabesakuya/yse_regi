@@ -40,6 +40,6 @@
     <input type="hidden" name="amount" id="registerAmount">
   </form>
 
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
