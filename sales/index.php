@@ -15,7 +15,6 @@
       <button onclick="appendNumber(9)">9</button>
       <button class="danger" onclick="clearDisplay()">AC</button>
 
-
       <button onclick="appendNumber(4)">4</button>
       <button onclick="appendNumber(5)">5</button>
       <button onclick="appendNumber(6)">6</button>
@@ -26,18 +25,20 @@
       <button onclick="appendNumber(3)">3</button>
       <button class="blue" onclick="multiply()">×</button>
 
-     
       <button onclick="appendNumber(0)">0</button>
       <button onclick="appendDoubleZero()">00</button>
       <button class="green" onclick="tax()">TAX</button>
       <button class="green" onclick="calculate()">＝</button>
-      
 
-      <button class="gray wide"  onclick="location.href='sales.php'">売上</button>
-      <button class="gray wide" onclick="location.href='register.php'">計上</button>
+      <button class="gray wide" onclick="location.href='sales.php'">売上</button>
+      <button class="gray wide" onclick="register()">計上</button>
     </div>
-    
   </div>
+
+  <!-- 隠しフォーム -->
+  <form id="registerForm" action="register.php" method="POST" style="display: none;">
+    <input type="hidden" name="amount" id="registerAmount">
+  </form>
 
   <script src="script.js"></script>
 </body>
