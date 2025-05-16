@@ -9,7 +9,7 @@ try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // ✅ データ取得クエリ
+    // データ取得クエリ
 $stmt = $pdo->query("SELECT * FROM sales ORDER BY id ASC");
     $sales = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
@@ -23,7 +23,7 @@ $stmt = $pdo->query("SELECT * FROM sales ORDER BY id ASC");
 <head>
     <meta charset="UTF-8">
     <title>売上履歴</title>
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style_sales.css">
 </head>
 
 <body>
