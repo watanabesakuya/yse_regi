@@ -79,7 +79,7 @@ try {
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>金額</th>
+                    <th>売上高</th>
                     <th>売上日時</th>
                 </tr>
             </thead>

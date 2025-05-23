@@ -58,6 +58,18 @@ function register() {
     alert("正しい金額を入力してください。");
     return;
   }
+
+  const formatted = amount.toLocaleString();
+  const result = confirm(`${formatted} 円を計上しますか？`);
+  if (!result) return;
+
+  console.log("▶ 送信準備OK: ", amount); // ✅ ここで確認
+
   document.getElementById("registerAmount").value = amount;
   document.getElementById("registerForm").submit();
 }
+
+//   document.getElementById("registerCount").value = count;
+//   document.getElementById("registerForm").submit();
+// }
+

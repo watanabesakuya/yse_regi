@@ -3,8 +3,8 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-// var_dump($_POST); // ← 追加！
-// exit;
+//  var_dump($_POST); // ← 追加！
+//  exit;
 
 
 $amount = isset($_POST['amount']) ? (int)$_POST['amount'] : 0;
@@ -31,6 +31,7 @@ try {
   header("Location: sales.php");
   exit;
 } catch (PDOException $e) {
-  echo "DBエラー: " . $e->getMessage();
+  echo "DBエラー: " . $e->getMessage(); // ← ここがちゃんと出るか確認
   exit;
 }
+
